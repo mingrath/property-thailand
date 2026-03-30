@@ -53,21 +53,21 @@ export default async function DeveloperPage({
   return (
     <div className="min-h-screen">
       {/* Developer Header */}
-      <section className="bg-brand-navy py-16 px-4">
+      <section className="bg-gradient-to-br from-brand-light via-white to-teal-50 py-16 px-4 border-b border-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-6">
-            <Building2 className="w-10 h-10 text-brand-gold" />
+          <div className="w-20 h-20 rounded-2xl bg-teal-50 border border-teal-100 flex items-center justify-center mx-auto mb-6">
+            <Building2 className="w-10 h-10 text-brand-accent" />
           </div>
-          <h1 className="text-3xl font-heading font-bold text-white mb-2">
+          <h1 className="text-3xl font-heading font-bold text-brand-dark mb-2">
             {developer.name}
           </h1>
-          <p className="text-white/70 mb-6">Developer &bull; {developer.listing_count} Active Projects</p>
+          <p className="text-brand-slate mb-6">Developer &bull; {developer.listing_count} Active Projects</p>
           {developer.website && (
             <a
               href={developer.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-xl text-sm hover:bg-white/20 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-brand-accent text-white rounded-xl text-sm font-medium hover:bg-teal-700 transition-colors"
             >
               <Globe className="w-4 h-4" />
               Visit Website
@@ -79,7 +79,7 @@ export default async function DeveloperPage({
       <div className="max-w-5xl mx-auto py-12 px-4">
         {/* About */}
         <section className="mb-12">
-          <h2 className="text-xl font-heading font-bold text-brand-navy mb-4">
+          <h2 className="text-xl font-heading font-bold text-brand-dark mb-4">
             {t("aboutDeveloper")}
           </h2>
           <p className="text-brand-slate leading-relaxed">{developer.bio_en}</p>
@@ -87,22 +87,22 @@ export default async function DeveloperPage({
 
         {/* Active Projects */}
         <section>
-          <h2 className="text-xl font-heading font-bold text-brand-navy mb-6">
+          <h2 className="text-xl font-heading font-bold text-brand-dark mb-6">
             {t("activeProjects")}
           </h2>
           <div className="space-y-6">
             {projects.map((project, i) => (
               <div
                 key={i}
-                className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-100 hover:shadow-lg transition-all"
+                className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-gray-100 bg-white hover:shadow-lg transition-all"
               >
                 <div className="md:w-72 aspect-[16/10] bg-gray-100 rounded-xl flex-shrink-0" />
                 <div className="flex-1">
                   <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-heading font-bold text-brand-navy">
+                    <h3 className="text-xl font-heading font-bold text-brand-dark">
                       {project.name}
                     </h3>
-                    <span className="text-xs font-medium bg-brand-cream text-brand-navy px-2.5 py-1 rounded-full whitespace-nowrap">
+                    <span className="text-xs font-medium bg-brand-light text-brand-dark border border-gray-100 px-2.5 py-1 rounded-full whitespace-nowrap">
                       {project.status}
                     </span>
                   </div>
@@ -111,15 +111,15 @@ export default async function DeveloperPage({
                   </div>
                   <div className="space-y-1.5 text-sm text-brand-slate">
                     <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 flex-shrink-0" />
+                      <MapPin className="w-4 h-4 flex-shrink-0 text-brand-accent" />
                       <span>{project.location}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Building2 className="w-4 h-4 flex-shrink-0" />
+                      <Building2 className="w-4 h-4 flex-shrink-0 text-brand-accent" />
                       <span>{project.units}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <Calendar className="w-4 h-4 flex-shrink-0" />
+                      <Calendar className="w-4 h-4 flex-shrink-0 text-brand-accent" />
                       <span>Completion: {project.completion}</span>
                     </div>
                   </div>

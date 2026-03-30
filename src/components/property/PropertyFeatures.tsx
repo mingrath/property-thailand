@@ -56,7 +56,7 @@ export default function PropertyFeatures({ amenities }: PropertyFeaturesProps) {
             )}
           >
             <Icon className="w-5 h-5 text-brand-gold flex-shrink-0" />
-            <span className="text-sm text-brand-navy font-medium capitalize">
+            <span className="text-sm text-brand-dark font-medium capitalize">
               {amenity}
             </span>
           </div>

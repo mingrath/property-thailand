@@ -620,7 +620,7 @@ export default function SearchPage() {
         )}
       >
         <div className="flex items-center justify-between p-5 border-b border-gray-100">
-          <h2 className="font-heading font-bold text-brand-navy text-lg">
+          <h2 className="font-heading font-bold text-brand-dark text-lg">
             {t("filters")}
           </h2>
           <button
@@ -628,7 +628,7 @@ export default function SearchPage() {
             onClick={() => setMobileFiltersOpen(false)}
             className="p-2 rounded-lg hover:bg-gray-100 transition-colors"
           >
-            <X className="w-5 h-5 text-brand-navy" />
+            <X className="w-5 h-5 text-brand-dark" />
           </button>
         </div>
         <div className="p-5">
@@ -639,7 +639,7 @@ export default function SearchPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Page header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-heading font-bold text-brand-navy mb-1">
+          <h1 className="text-3xl font-heading font-bold text-brand-dark mb-1">
             {t("title")}
           </h1>
           <p className="text-brand-slate text-sm">
@@ -652,7 +652,7 @@ export default function SearchPage() {
           <button
             type="button"
             onClick={() => setMobileFiltersOpen(true)}
-            className="lg:hidden flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm font-medium text-brand-navy hover:border-brand-navy transition-colors"
+            className="lg:hidden flex items-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 bg-white text-sm font-medium text-brand-dark hover:border-brand-dark transition-colors"
           >
             <SlidersHorizontal className="w-4 h-4" />
             {t("filters")}
@@ -669,7 +669,7 @@ export default function SearchPage() {
           {/* Desktop sidebar */}
           <aside className="hidden lg:block w-72 flex-shrink-0">
             <div className="sticky top-24 bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-              <h2 className="font-heading font-bold text-brand-navy text-lg mb-6">
+              <h2 className="font-heading font-bold text-brand-dark text-lg mb-6">
                 {t("filters")}
               </h2>
               <FilterPanel />
@@ -683,7 +683,7 @@ export default function SearchPage() {
                 <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4">
                   <SlidersHorizontal className="w-7 h-7 text-gray-400" />
                 </div>
-                <p className="text-xl font-heading font-semibold text-brand-navy mb-2">
+                <p className="text-xl font-heading font-semibold text-brand-dark mb-2">
                   No properties found
                 </p>
                 <p className="text-brand-slate text-sm">
@@ -708,7 +708,7 @@ export default function SearchPage() {
                     "p-2.5 rounded-xl border transition-colors",
                     paginatedPage <= 1
                       ? "border-gray-100 text-gray-300 pointer-events-none"
-                      : "border-gray-200 text-brand-navy hover:border-brand-navy bg-white"
+                      : "border-gray-200 text-brand-dark hover:border-brand-dark bg-white"
                   )}
                 >
                   <ChevronLeft className="w-4 h-4" />
@@ -722,8 +722,8 @@ export default function SearchPage() {
                       className={cn(
                         "w-10 h-10 flex items-center justify-center rounded-xl text-sm font-medium border transition-colors",
                         page === paginatedPage
-                          ? "bg-brand-navy text-white border-brand-navy"
-                          : "bg-white text-brand-navy border-gray-200 hover:border-brand-navy"
+                          ? "bg-brand-dark text-white border-brand-dark"
+                          : "bg-white text-brand-dark border-gray-200 hover:border-brand-dark"
                       )}
                     >
                       {page}
@@ -742,7 +742,7 @@ export default function SearchPage() {
                     "p-2.5 rounded-xl border transition-colors",
                     paginatedPage >= totalPages
                       ? "border-gray-100 text-gray-300 pointer-events-none"
-                      : "border-gray-200 text-brand-navy hover:border-brand-navy bg-white"
+                      : "border-gray-200 text-brand-dark hover:border-brand-dark bg-white"
                   )}
                 >
                   <ChevronRight className="w-4 h-4" />

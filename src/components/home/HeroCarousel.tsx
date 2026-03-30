@@ -79,10 +79,10 @@ export default function HeroCarousel({
         </motion.div>
       </AnimatePresence>
 
-      {/* Light bottom gradient — white fade for readability, NOT dark overlay */}
+      {/* Soft bottom gradient for text contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-white/30 via-transparent to-transparent pointer-events-none" />
 
-      {/* Subtle vignette on left/right edges */}
+      {/* Edge vignette */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10 pointer-events-none" />
 
       {/* Hero content */}

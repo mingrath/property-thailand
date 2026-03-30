@@ -167,7 +167,7 @@ export default async function PropertyDetailPage({
               Phuket
             </Link>
             <ChevronRight className="w-3.5 h-3.5 text-gray-300" />
-            <span className="text-brand-navy font-medium line-clamp-1">
+            <span className="text-brand-dark font-medium line-clamp-1">
               {title}
             </span>
           </nav>
@@ -181,14 +181,14 @@ export default async function PropertyDetailPage({
             <span className="bg-brand-gold text-white text-xs font-medium px-3 py-1 rounded-full">
               {t("featured") ?? "Featured"}
             </span>
-            <span className="bg-brand-navy/10 text-brand-navy text-xs font-medium px-3 py-1 rounded-full capitalize">
+            <span className="bg-brand-dark/10 text-brand-dark text-xs font-medium px-3 py-1 rounded-full capitalize">
               {property.property_type}
             </span>
             <span className="bg-green-100 text-green-700 text-xs font-medium px-3 py-1 rounded-full">
               For Sale
             </span>
           </div>
-          <h1 className="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-2">
+          <h1 className="text-3xl md:text-4xl font-heading font-bold text-brand-dark mb-2">
             {title}
           </h1>
           {address && (
@@ -208,7 +208,7 @@ export default async function PropertyDetailPage({
 
             {/* Price + key stats */}
             <div className="bg-brand-cream rounded-2xl p-6">
-              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-1">
+              <div className="text-3xl md:text-4xl font-heading font-bold text-brand-dark mb-1">
                 {displayPrice}
               </div>
               {property.price_per_sqm && (
@@ -222,7 +222,7 @@ export default async function PropertyDetailPage({
                 {property.bedrooms != null && (
                   <div className="flex flex-col items-center gap-1.5 bg-white rounded-xl p-4 shadow-sm">
                     <Bed className="w-6 h-6 text-brand-gold" />
-                    <span className="text-xl font-bold text-brand-navy">
+                    <span className="text-xl font-bold text-brand-dark">
                       {property.bedrooms}
                     </span>
                     <span className="text-xs text-brand-slate uppercase tracking-wide">
@@ -233,7 +233,7 @@ export default async function PropertyDetailPage({
                 {property.bathrooms != null && (
                   <div className="flex flex-col items-center gap-1.5 bg-white rounded-xl p-4 shadow-sm">
                     <Bath className="w-6 h-6 text-brand-gold" />
-                    <span className="text-xl font-bold text-brand-navy">
+                    <span className="text-xl font-bold text-brand-dark">
                       {property.bathrooms}
                     </span>
                     <span className="text-xs text-brand-slate uppercase tracking-wide">
@@ -244,7 +244,7 @@ export default async function PropertyDetailPage({
                 {property.area_sqm != null && (
                   <div className="flex flex-col items-center gap-1.5 bg-white rounded-xl p-4 shadow-sm">
                     <Maximize className="w-6 h-6 text-brand-gold" />
-                    <span className="text-xl font-bold text-brand-navy">
+                    <span className="text-xl font-bold text-brand-dark">
                       {property.area_sqm}
                     </span>
                     <span className="text-xs text-brand-slate uppercase tracking-wide">
@@ -255,7 +255,7 @@ export default async function PropertyDetailPage({
                 {property.year_built != null && (
                   <div className="flex flex-col items-center gap-1.5 bg-white rounded-xl p-4 shadow-sm">
                     <Calendar className="w-6 h-6 text-brand-gold" />
-                    <span className="text-xl font-bold text-brand-navy">
+                    <span className="text-xl font-bold text-brand-dark">
                       {property.year_built}
                     </span>
                     <span className="text-xs text-brand-slate uppercase tracking-wide">
@@ -275,7 +275,7 @@ export default async function PropertyDetailPage({
                     <p className="text-xs text-brand-slate uppercase tracking-wide">
                       Land Size
                     </p>
-                    <p className="font-semibold text-brand-navy">
+                    <p className="font-semibold text-brand-dark">
                       {property.land_sqm} {t("sqm") ?? "sqm"}
                     </p>
                   </div>
@@ -288,7 +288,7 @@ export default async function PropertyDetailPage({
                     <p className="text-xs text-brand-slate uppercase tracking-wide">
                       Floors
                     </p>
-                    <p className="font-semibold text-brand-navy">
+                    <p className="font-semibold text-brand-dark">
                       {property.total_floors}
                     </p>
                   </div>
@@ -301,7 +301,7 @@ export default async function PropertyDetailPage({
                     <p className="text-xs text-brand-slate uppercase tracking-wide">
                       Project
                     </p>
-                    <p className="font-semibold text-brand-navy">
+                    <p className="font-semibold text-brand-dark">
                       {property.project_name}
                     </p>
                   </div>
@@ -312,7 +312,7 @@ export default async function PropertyDetailPage({
             {/* Description */}
             {description && (
               <section>
-                <h2 className="text-xl font-heading font-bold text-brand-navy mb-4">
+                <h2 className="text-xl font-heading font-bold text-brand-dark mb-4">
                   About This Property
                 </h2>
                 <p className="text-brand-slate leading-relaxed whitespace-pre-line">
@@ -324,7 +324,7 @@ export default async function PropertyDetailPage({
             {/* Features & Amenities */}
             {property.amenities.length > 0 && (
               <section>
-                <h2 className="text-xl font-heading font-bold text-brand-navy mb-4">
+                <h2 className="text-xl font-heading font-bold text-brand-dark mb-4">
                   Features &amp; Amenities
                 </h2>
                 <PropertyFeatures amenities={property.amenities} />
@@ -333,7 +333,7 @@ export default async function PropertyDetailPage({
 
             {/* Location */}
             <section>
-              <h2 className="text-xl font-heading font-bold text-brand-navy mb-4">
+              <h2 className="text-xl font-heading font-bold text-brand-dark mb-4">
                 Location
               </h2>
               {address && (
@@ -351,11 +351,11 @@ export default async function PropertyDetailPage({
                       "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=60')",
                   }}
                 />
-                <div className="absolute inset-0 bg-brand-navy/20" />
+                <div className="absolute inset-0 bg-brand-dark/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="bg-white rounded-xl px-5 py-3 shadow-lg flex items-center gap-2">
                     <MapPin className="w-5 h-5 text-brand-gold" />
-                    <span className="font-medium text-brand-navy text-sm">
+                    <span className="font-medium text-brand-dark text-sm">
                       Layan, Phuket
                     </span>
                   </div>
@@ -375,7 +375,7 @@ export default async function PropertyDetailPage({
         {/* Similar Listings */}
         <section className="mt-16 pt-12 border-t border-gray-100">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-heading font-bold text-brand-navy">
+            <h2 className="text-2xl font-heading font-bold text-brand-dark">
               Similar Properties
             </h2>
             <Link
@@ -402,7 +402,7 @@ export default async function PropertyDetailPage({
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 </div>
                 <div className="p-5">
-                  <div className="text-xl font-bold text-brand-navy mb-1">
+                  <div className="text-xl font-bold text-brand-dark mb-1">
                     {item.price}
                   </div>
                   <h3 className="font-medium text-gray-700 mb-2 group-hover:text-brand-gold transition-colors line-clamp-1">

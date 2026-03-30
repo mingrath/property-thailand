@@ -146,7 +146,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
   }
 
   const inputClass =
-    "w-full px-3 py-2 rounded-lg border border-gray-200 text-sm text-brand-navy bg-white focus:outline-none focus:ring-2 focus:ring-brand-gold placeholder:text-gray-400";
+    "w-full px-3 py-2 rounded-lg border border-gray-200 text-sm text-brand-dark bg-white focus:outline-none focus:ring-2 focus:ring-brand-gold placeholder:text-gray-400";
 
   const bedroomOptions = [1, 2, 3, 4, 5] as const;
 
@@ -154,7 +154,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
     <aside className={cn("space-y-6", className)}>
       {/* Location */}
       <div>
-        <label className="block text-sm font-semibold text-brand-navy mb-2">
+        <label className="block text-sm font-semibold text-brand-dark mb-2">
           {t("location")}
         </label>
         <select
@@ -175,7 +175,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
 
       {/* Listing type */}
       <div>
-        <label className="block text-sm font-semibold text-brand-navy mb-2">
+        <label className="block text-sm font-semibold text-brand-dark mb-2">
           {t("listingType")}
         </label>
         <div className="flex rounded-xl border border-gray-200 overflow-hidden">
@@ -199,8 +199,8 @@ export default function FilterPanel({ className }: FilterPanelProps) {
                 className={cn(
                   "flex-1 py-2 text-sm font-medium transition-colors",
                   filters.listingType === val
-                    ? "bg-brand-navy text-white"
-                    : "bg-white text-brand-navy hover:bg-brand-cream"
+                    ? "bg-brand-dark text-white"
+                    : "bg-white text-brand-dark hover:bg-brand-cream"
                 )}
               >
                 {label}
@@ -212,7 +212,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
 
       {/* Property type */}
       <div>
-        <label className="block text-sm font-semibold text-brand-navy mb-2">
+        <label className="block text-sm font-semibold text-brand-dark mb-2">
           {t("propertyType")}
         </label>
         <div className="flex flex-wrap gap-2">
@@ -224,8 +224,8 @@ export default function FilterPanel({ className }: FilterPanelProps) {
               className={cn(
                 "px-3 py-1.5 rounded-full text-xs font-medium border transition-colors",
                 filters.propertyTypes.includes(pt.value)
-                  ? "bg-brand-navy text-white border-brand-navy"
-                  : "bg-white text-brand-navy border-gray-200 hover:border-brand-navy"
+                  ? "bg-brand-dark text-white border-brand-dark"
+                  : "bg-white text-brand-dark border-gray-200 hover:border-brand-dark"
               )}
             >
               {pt.label_en}
@@ -236,7 +236,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
 
       {/* Price range */}
       <div>
-        <label className="block text-sm font-semibold text-brand-navy mb-2">
+        <label className="block text-sm font-semibold text-brand-dark mb-2">
           {t("priceRange")}
         </label>
         <div className="flex gap-2">
@@ -265,7 +265,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
 
       {/* Bedrooms */}
       <div>
-        <label className="block text-sm font-semibold text-brand-navy mb-2">
+        <label className="block text-sm font-semibold text-brand-dark mb-2">
           {t("bedrooms")}
         </label>
         <div className="flex gap-2">
@@ -283,7 +283,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
                 "flex-1 py-2 rounded-lg text-sm font-medium border transition-colors",
                 filters.bedrooms === n
                   ? "bg-brand-gold text-white border-brand-gold"
-                  : "bg-white text-brand-navy border-gray-200 hover:border-brand-gold"
+                  : "bg-white text-brand-dark border-gray-200 hover:border-brand-gold"
               )}
             >
               {n === 5 ? "5+" : n}
@@ -294,7 +294,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
 
       {/* Bathrooms */}
       <div>
-        <label className="block text-sm font-semibold text-brand-navy mb-2">
+        <label className="block text-sm font-semibold text-brand-dark mb-2">
           {t("bathrooms")}
         </label>
         <div className="flex gap-2">
@@ -312,7 +312,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
                 "flex-1 py-2 rounded-lg text-sm font-medium border transition-colors",
                 filters.bathrooms === n
                   ? "bg-brand-gold text-white border-brand-gold"
-                  : "bg-white text-brand-navy border-gray-200 hover:border-brand-gold"
+                  : "bg-white text-brand-dark border-gray-200 hover:border-brand-gold"
               )}
             >
               {n === 5 ? "5+" : n}
@@ -323,7 +323,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
 
       {/* Area range */}
       <div>
-        <label className="block text-sm font-semibold text-brand-navy mb-2">
+        <label className="block text-sm font-semibold text-brand-dark mb-2">
           {t("areaRange")}
         </label>
         <div className="flex gap-2">
@@ -362,7 +362,7 @@ export default function FilterPanel({ className }: FilterPanelProps) {
         <button
           type="button"
           onClick={handleClear}
-          className="w-full py-3 rounded-xl border border-gray-200 hover:border-brand-navy text-brand-navy font-medium text-sm transition-colors flex items-center justify-center gap-1.5"
+          className="w-full py-3 rounded-xl border border-gray-200 hover:border-brand-dark text-brand-dark font-medium text-sm transition-colors flex items-center justify-center gap-1.5"
         >
           <X className="w-4 h-4" />
           {t("clearFilters")}

@@ -2,7 +2,7 @@ export default function PropertyDetailLoading() {
   return (
     <div className="min-h-screen bg-white animate-pulse">
       {/* Breadcrumb skeleton */}
-      <div className="bg-brand-cream border-b border-gray-100">
+      <div className="bg-brand-light border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 py-3">
           <div className="h-4 w-64 bg-gray-200 rounded-full" />
         </div>
@@ -33,7 +33,7 @@ export default function PropertyDetailLoading() {
             </div>
 
             {/* Price stats skeleton */}
-            <div className="bg-brand-cream rounded-2xl p-6 space-y-4">
+            <div className="bg-brand-light rounded-2xl p-6 space-y-4">
               <div className="h-10 w-48 bg-gray-200 rounded-xl" />
               <div className="h-4 w-32 bg-gray-200 rounded-full" />
               <div className="grid grid-cols-4 gap-4">

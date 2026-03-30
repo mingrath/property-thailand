@@ -27,7 +27,7 @@ export default function AgentContactCard({ agent }: AgentContactCardProps) {
           )}
         </div>
         <div>
-          <h3 className="font-heading font-bold text-brand-navy text-lg leading-tight">
+          <h3 className="font-heading font-bold text-brand-dark text-lg leading-tight">
             {agent.name}
           </h3>
           {agent.company && (
@@ -55,7 +55,7 @@ export default function AgentContactCard({ agent }: AgentContactCardProps) {
         {agent.email && (
           <a
             href={`mailto:${agent.email}`}
-            className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-brand-navy hover:bg-brand-navy/90 text-white font-semibold rounded-xl transition-colors"
+            className="flex items-center justify-center gap-2 w-full px-4 py-3 bg-brand-dark hover:bg-brand-dark/90 text-white font-semibold rounded-xl transition-colors"
           >
             <Mail className="w-4 h-4" />
             Send Email
