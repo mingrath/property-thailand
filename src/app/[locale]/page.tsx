@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { getFeaturedProperties, getLocations } from "@/lib/data";
 import { formatPrice, formatPriceRent } from "@/lib/constants";
 import { Bed, Bath, Maximize, MapPin } from "lucide-react";
+import HeroCarousel from "@/components/home/HeroCarousel";
 
 export default function HomePage() {
   const t = useTranslations("home");
@@ -12,49 +13,23 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-brand-navy">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-40"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1582407947092-ff88a23b3eed?w=1920&q=80')",
-          }}
-        />
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold text-white mb-6 tracking-tight">
-            {t("heroTitle")}
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 mb-10 font-light">
-            {t("heroSubtitle")}
-          </p>
-
-          {/* Search Bar */}
-          <div className="bg-white rounded-2xl p-3 shadow-2xl max-w-3xl mx-auto flex flex-col md:flex-row gap-3">
-            <input
-              type="text"
-              placeholder={tCommon("searchPlaceholder")}
-              className="flex-1 px-5 py-4 text-lg rounded-xl bg-gray-50 border-0 focus:outline-none focus:ring-2 focus:ring-brand-gold text-brand-navy placeholder:text-gray-400"
-            />
-            <button className="px-8 py-4 bg-brand-gold hover:bg-brand-gold-dark text-white font-semibold rounded-xl transition-colors text-lg whitespace-nowrap">
-              {t("searchButton")}
-            </button>
-          </div>
-        </div>
-
-        {/* Gradient overlay at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
-      </section>
+      {/* Hero Section — bright carousel */}
+      <HeroCarousel
+        title={t("heroTitle")}
+        subtitle={t("heroSubtitle")}
+        searchPlaceholder={tCommon("searchPlaceholder")}
+        searchButtonLabel={t("searchButton")}
+      />
 
       {/* Featured Properties */}
       <section className="py-20 px-4 max-w-7xl mx-auto">
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-navy">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-dark">
             {t("featuredTitle")}
           </h2>
           <a
             href="/search?featured=true"
-            className="text-brand-gold hover:text-brand-gold-dark font-medium transition-colors"
+            className="text-brand-accent hover:text-brand-accent-light font-medium transition-colors"
           >
             {tCommon("viewAll")} &rarr;
           </a>
@@ -79,17 +54,17 @@ export default function HomePage() {
                 <span className="absolute top-4 left-4 bg-brand-gold text-white text-sm font-medium px-3 py-1 rounded-full">
                   {tCommon("featured")}
                 </span>
-                <span className="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-medium px-2.5 py-1 rounded-full">
+                <span className="absolute top-4 right-4 bg-white/90 text-brand-dark text-xs font-medium px-2.5 py-1 rounded-full">
                   {property.listing_type === "sale" ? "For Sale" : "For Rent"}
                 </span>
               </div>
               <div className="p-5">
-                <div className="text-2xl font-bold text-brand-navy mb-1">
+                <div className="text-2xl font-bold text-brand-dark mb-1">
                   {property.listing_type === "rent"
                     ? formatPriceRent(property.price)
                     : formatPrice(property.price)}
                 </div>
-                <h3 className="font-medium text-gray-700 mb-2 group-hover:text-brand-gold transition-colors line-clamp-1">
+                <h3 className="font-medium text-gray-700 mb-2 group-hover:text-brand-accent transition-colors line-clamp-1">
                   {property.title_en}
                 </h3>
                 {property.address_en && (
@@ -122,9 +97,9 @@ export default function HomePage() {
       </section>
 
       {/* Location Grid */}
-      <section className="py-20 px-4 bg-brand-cream">
+      <section className="py-20 px-4 bg-brand-light">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-navy mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-dark mb-12 text-center">
             {t("locationsTitle")}
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
@@ -145,10 +120,11 @@ export default function HomePage() {
                     backgroundImage: `url('https://images.unsplash.com/${loc.image}?w=600&q=80')`,
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {/* Lighter overlay than before — bottom only, 50% opacity */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <h3 className="text-2xl font-heading font-bold">{loc.name}</h3>
-                  <p className="text-white/80 text-sm">{loc.count} {tCommon("sqm") === "平方米" ? "房产" : "properties"}</p>
+                  <p className="text-white/80 text-sm">{loc.count} properties</p>
                 </div>
               </Link>
             ))}
@@ -157,7 +133,7 @@ export default function HomePage() {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-16 bg-brand-navy">
+      <section className="py-16 bg-brand-dark">
         <div className="max-w-5xl mx-auto grid grid-cols-3 gap-8 text-center">
           {[
             { value: "150+", label: t("statsProperties") },
@@ -175,7 +151,6 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-
     </main>
   );
 }
