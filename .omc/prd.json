@@ -6,7 +6,7 @@
       "id": "US-001",
       "title": "Fresh color palette + font loading foundation",
       "priority": 1,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "globals.css uses a fresh LIGHT palette: white (#FFFFFF) base, light gray (#F8FAFC/#F1F5F9), warm accent instead of dark navy backgrounds",
         "Dark navy (#0A1628) is NOT used as any section background color (only allowed for text)",
@@ -19,7 +19,7 @@
       "id": "US-002",
       "title": "Header and Footer redesign — light, clean, minimal",
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "Header has light/white background, clean navigation, working language switcher",
         "Footer uses subtle dark (not pitch black) background with refined typography",
@@ -32,7 +32,7 @@
       "id": "US-003",
       "title": "Hero section with image carousel — bright, aspirational",
       "priority": 3,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "Homepage hero has an auto-rotating image carousel with 4-6 high-quality property/architecture images",
         "Carousel transitions are smooth (fade or slide, 5-8 second intervals)",
@@ -46,7 +46,7 @@
       "id": "US-004",
       "title": "PropertyCard redesign — clean minimal with real images",
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "PropertyCard uses real scraped property images (from data layer), NOT gray placeholder boxes",
         "Card has generous padding, rounded corners (xl or 2xl), subtle shadow on hover",
@@ -60,7 +60,7 @@
       "id": "US-005",
       "title": "Homepage full redesign — featured, locations, stats",
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "Featured listings section shows real property data with redesigned PropertyCards",
         "Location grid uses attractive images with clean overlay text (not heavy gradient)",
@@ -73,7 +73,7 @@
       "id": "US-006",
       "title": "Search page — spacious layout with clean filters",
       "priority": 6,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "Search results grid has generous spacing between cards",
         "Filter sidebar uses the new light palette (no dark backgrounds)",
@@ -86,20 +86,20 @@
       "id": "US-007",
       "title": "Property detail page — luxury treatment",
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "Image gallery is large, prominent, with smooth thumbnail navigation",
         "Property info section has elegant typography and generous spacing",
         "Agent contact card is clean and professional (not heavy/dark)",
         "Similar listings section uses redesigned PropertyCards",
-        "Overall feel matches 'luxury real estate brand' aesthetic"
+        "Overall feel matches luxury real estate brand aesthetic"
       ]
     },
     {
       "id": "US-008",
       "title": "Section and profile pages refresh",
       "priority": 8,
-      "passes": false,
+      "passes": true,
       "acceptanceCriteria": [
         "Sale, Rent, Projects pages use the new light palette (no dark navy hero backgrounds)",
         "Section hero areas are clean and minimal (light background or subtle gradient)",
