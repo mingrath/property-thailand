@@ -1,0 +1,13 @@
+{
+  "/[locale]/agent/[id]/page": "app/[locale]/agent/[id]/page.js",
+  "/[locale]/developer/[id]/page": "app/[locale]/developer/[id]/page.js",
+  "/[locale]/map/page": "app/[locale]/map/page.js",
+  "/[locale]/page": "app/[locale]/page.js",
+  "/[locale]/projects/page": "app/[locale]/projects/page.js",
+  "/[locale]/property/[id]/page": "app/[locale]/property/[id]/page.js",
+  "/[locale]/rent/page": "app/[locale]/rent/page.js",
+  "/[locale]/sale/page": "app/[locale]/sale/page.js",
+  "/[locale]/search/page": "app/[locale]/search/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js"
+}

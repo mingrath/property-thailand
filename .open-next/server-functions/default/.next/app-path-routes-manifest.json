@@ -1,0 +1,13 @@
+{
+  "/[locale]/agent/[id]/page": "/[locale]/agent/[id]",
+  "/[locale]/developer/[id]/page": "/[locale]/developer/[id]",
+  "/[locale]/map/page": "/[locale]/map",
+  "/[locale]/page": "/[locale]",
+  "/[locale]/projects/page": "/[locale]/projects",
+  "/[locale]/property/[id]/page": "/[locale]/property/[id]",
+  "/[locale]/rent/page": "/[locale]/rent",
+  "/[locale]/sale/page": "/[locale]/sale",
+  "/[locale]/search/page": "/[locale]/search",
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found"
+}
