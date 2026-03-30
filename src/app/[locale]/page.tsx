@@ -1,8 +1,14 @@
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import { getFeaturedProperties, getLocations } from "@/lib/data";
+import { formatPrice, formatPriceRent } from "@/lib/constants";
+import { Bed, Bath, Maximize, MapPin } from "lucide-react";
 
 export default function HomePage() {
   const t = useTranslations("home");
   const tCommon = useTranslations("common");
+  const featured = getFeaturedProperties(6);
+  const locations = getLocations().filter((l) => l.property_count > 0).slice(0, 4);
 
   return (
     <main className="min-h-screen">
@@ -54,33 +60,63 @@ export default function HomePage() {
           </a>
         </div>
 
-        {/* Placeholder grid - will be populated with real data */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div
-              key={i}
+          {featured.map((property) => (
+            <Link
+              key={property.id}
+              href={`/property/${property.id}`}
               className="group rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
             >
               <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+                {property.thumbnail_url && (
+                  <img
+                    src={property.thumbnail_url}
+                    alt={property.title_en}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                )}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                 <span className="absolute top-4 left-4 bg-brand-gold text-white text-sm font-medium px-3 py-1 rounded-full">
                   {tCommon("featured")}
                 </span>
+                <span className="absolute top-4 right-4 bg-white/90 text-brand-navy text-xs font-medium px-2.5 py-1 rounded-full">
+                  {property.listing_type === "sale" ? "For Sale" : "For Rent"}
+                </span>
               </div>
               <div className="p-5">
                 <div className="text-2xl font-bold text-brand-navy mb-1">
-                  ฿12,500,000
+                  {property.listing_type === "rent"
+                    ? formatPriceRent(property.price)
+                    : formatPrice(property.price)}
                 </div>
-                <h3 className="font-medium text-gray-700 mb-3 group-hover:text-brand-gold transition-colors">
-                  Luxury Condo in Sukhumvit
+                <h3 className="font-medium text-gray-700 mb-2 group-hover:text-brand-gold transition-colors line-clamp-1">
+                  {property.title_en}
                 </h3>
-                <div className="flex gap-4 text-sm text-gray-500">
-                  <span>2 {tCommon("beds")}</span>
-                  <span>2 {tCommon("baths")}</span>
-                  <span>85 {tCommon("sqm")}</span>
+                {property.address_en && (
+                  <div className="flex items-center gap-1 text-sm text-brand-slate mb-3">
+                    <MapPin className="w-3.5 h-3.5" />
+                    <span className="line-clamp-1">{property.address_en}</span>
+                  </div>
+                )}
+                <div className="flex gap-4 text-sm text-gray-500 pt-3 border-t border-gray-50">
+                  {property.bedrooms != null && (
+                    <span className="flex items-center gap-1">
+                      <Bed className="w-4 h-4" /> {property.bedrooms}
+                    </span>
+                  )}
+                  {property.bathrooms != null && (
+                    <span className="flex items-center gap-1">
+                      <Bath className="w-4 h-4" /> {property.bathrooms}
+                    </span>
+                  )}
+                  {property.area_sqm != null && (
+                    <span className="flex items-center gap-1">
+                      <Maximize className="w-4 h-4" /> {property.area_sqm} {tCommon("sqm")}
+                    </span>
+                  )}
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
@@ -93,12 +129,12 @@ export default function HomePage() {
           </h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: "Phuket", count: 45, image: "photo-1589394815804-964ed0be2eb5" },
-              { name: "Pattaya", count: 38, image: "photo-1596422846543-75c6fc197f07" },
-              { name: "Koh Samui", count: 22, image: "photo-1537956965359-7573183d1f57" },
-              { name: "Bangkok", count: 67, image: "photo-1508009603885-50cf7c579365" },
+              { name: locations[0]?.name_en || "Phuket", count: locations[0]?.property_count || 0, image: "photo-1589394815804-964ed0be2eb5" },
+              { name: locations[1]?.name_en || "Pattaya", count: locations[1]?.property_count || 0, image: "photo-1596422846543-75c6fc197f07" },
+              { name: locations[2]?.name_en || "Koh Samui", count: locations[2]?.property_count || 0, image: "photo-1537956965359-7573183d1f57" },
+              { name: locations[3]?.name_en || "Bangkok", count: locations[3]?.property_count || 0, image: "photo-1508009603885-50cf7c579365" },
             ].map((loc) => (
-              <a
+              <Link
                 key={loc.name}
                 href={`/search?location=${loc.name.toLowerCase().replace(" ", "-")}`}
                 className="group relative aspect-[3/4] rounded-2xl overflow-hidden"
@@ -114,7 +150,7 @@ export default function HomePage() {
                   <h3 className="text-2xl font-heading font-bold">{loc.name}</h3>
                   <p className="text-white/80 text-sm">{loc.count} {tCommon("sqm") === "平方米" ? "房产" : "properties"}</p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
