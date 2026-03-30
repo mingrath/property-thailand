@@ -1,0 +1,8 @@
+# Property Thailand Redesign — Progress Log
+
+## Task
+Full visual redesign: dark navy → fresh light palette, hero carousel, Dot Property spaciousness + luxury accents.
+
+## Iteration 1 — Starting
+- 8 user stories defined in prd.json
+- Starting with US-001: Foundation (palette + fonts)

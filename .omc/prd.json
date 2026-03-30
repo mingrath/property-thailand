@@ -1,0 +1,112 @@
+{
+  "id": "property-thailand-redesign",
+  "title": "Property Thailand Full Visual Redesign",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "Fresh color palette + font loading foundation",
+      "priority": 1,
+      "passes": false,
+      "acceptanceCriteria": [
+        "globals.css uses a fresh LIGHT palette: white (#FFFFFF) base, light gray (#F8FAFC/#F1F5F9), warm accent instead of dark navy backgrounds",
+        "Dark navy (#0A1628) is NOT used as any section background color (only allowed for text)",
+        "next/font/google loads Inter and Plus Jakarta Sans (or equivalent premium fonts) in layout.tsx",
+        "Font variables are applied to html/body via className",
+        "Build passes with zero TypeScript errors"
+      ]
+    },
+    {
+      "id": "US-002",
+      "title": "Header and Footer redesign — light, clean, minimal",
+      "priority": 2,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Header has light/white background, clean navigation, working language switcher",
+        "Footer uses subtle dark (not pitch black) background with refined typography",
+        "Mobile hamburger menu works and matches new palette",
+        "Both components use the loaded fonts (not system fallbacks)",
+        "No dark navy (#0A1628) backgrounds on header"
+      ]
+    },
+    {
+      "id": "US-003",
+      "title": "Hero section with image carousel — bright, aspirational",
+      "priority": 3,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Homepage hero has an auto-rotating image carousel with 4-6 high-quality property/architecture images",
+        "Carousel transitions are smooth (fade or slide, 5-8 second intervals)",
+        "Hero is BRIGHT and aspirational — NOT dark overlay dominated",
+        "Search bar is overlaid on hero with glassmorphism or clean white card styling",
+        "Hero text (title + subtitle) is readable over carousel images",
+        "Responsive: carousel works on mobile without layout shift"
+      ]
+    },
+    {
+      "id": "US-004",
+      "title": "PropertyCard redesign — clean minimal with real images",
+      "priority": 4,
+      "passes": false,
+      "acceptanceCriteria": [
+        "PropertyCard uses real scraped property images (from data layer), NOT gray placeholder boxes",
+        "Card has generous padding, rounded corners (xl or 2xl), subtle shadow on hover",
+        "Price, title, location, bed/bath/sqm stats are clearly readable",
+        "Hover animation: subtle lift + shadow increase",
+        "Consistent aspect ratio for card images (4:3 or 16:10)",
+        "Card matches the fresh light palette (white card on light gray background)"
+      ]
+    },
+    {
+      "id": "US-005",
+      "title": "Homepage full redesign — featured, locations, stats",
+      "priority": 5,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Featured listings section shows real property data with redesigned PropertyCards",
+        "Location grid uses attractive images with clean overlay text (not heavy gradient)",
+        "Stats bar section uses the new palette (not dark navy background)",
+        "All sections have consistent spacing (generous, Dot Property-level white space)",
+        "Page flows naturally from hero → featured → locations → stats"
+      ]
+    },
+    {
+      "id": "US-006",
+      "title": "Search page — spacious layout with clean filters",
+      "priority": 6,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Search results grid has generous spacing between cards",
+        "Filter sidebar uses the new light palette (no dark backgrounds)",
+        "Sort dropdown and result count are cleanly styled",
+        "Mobile: filters accessible via clean slide-out drawer",
+        "Empty state and loading skeleton match new design"
+      ]
+    },
+    {
+      "id": "US-007",
+      "title": "Property detail page — luxury treatment",
+      "priority": 7,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Image gallery is large, prominent, with smooth thumbnail navigation",
+        "Property info section has elegant typography and generous spacing",
+        "Agent contact card is clean and professional (not heavy/dark)",
+        "Similar listings section uses redesigned PropertyCards",
+        "Overall feel matches 'luxury real estate brand' aesthetic"
+      ]
+    },
+    {
+      "id": "US-008",
+      "title": "Section and profile pages refresh",
+      "priority": 8,
+      "passes": false,
+      "acceptanceCriteria": [
+        "Sale, Rent, Projects pages use the new light palette (no dark navy hero backgrounds)",
+        "Section hero areas are clean and minimal (light background or subtle gradient)",
+        "Agent and Developer profile pages match the new palette",
+        "Map placeholder page matches the new design",
+        "All loading.tsx and error.tsx files match the new palette"
+      ]
+    }
+  ]
+}

@@ -66,12 +66,12 @@ export default function ProjectsPage() {
   return (
     <div className="min-h-screen">
       {/* Hero */}
-      <section className="bg-brand-navy py-20 px-4">
+      <section className="bg-gradient-to-br from-brand-light via-white to-teal-50 py-20 px-4 border-b border-gray-100">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-brand-dark mb-4">
             {t("projects")}
           </h1>
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+          <p className="text-brand-slate text-lg max-w-2xl mx-auto">
             Explore the latest development projects from Thailand&apos;s top developers
           </p>
         </div>
@@ -88,7 +88,7 @@ export default function ProjectsPage() {
             >
               <div className="aspect-[16/10] bg-gray-100 relative">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                <span className="absolute top-3 left-3 bg-brand-navy text-white text-xs font-medium px-2.5 py-1 rounded-full">
+                <span className="absolute top-3 left-3 bg-white/90 text-brand-dark text-xs font-medium px-2.5 py-1 rounded-full">
                   {project.status}
                 </span>
                 <div className="absolute bottom-4 left-4 right-4">
@@ -100,7 +100,7 @@ export default function ProjectsPage() {
               </div>
 
               <div className="p-5">
-                <div className="text-xl font-bold text-brand-gold mb-3">
+                <div className="text-xl font-bold text-brand-accent mb-3">
                   From ฿{(project.priceFrom / 1000000).toFixed(1)}M
                 </div>
 

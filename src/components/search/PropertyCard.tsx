@@ -30,9 +30,9 @@ export default function PropertyCard({ property }: PropertyCardProps) {
   return (
     <Link
       href={`/property/${property.id}`}
-      className="group block rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300"
+      className="group block rounded-2xl overflow-hidden bg-white border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
     >
-      {/* Image */}
+      {/* Image — 4:3 aspect ratio */}
       <div className="aspect-[4/3] relative overflow-hidden bg-gray-100">
         <Image
           src={thumbnailUrl}
@@ -41,9 +41,10 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
+        {/* Subtle gradient for badge legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
 
-        {/* Badges */}
+        {/* Top-left badges */}
         <div className="absolute top-3 left-3 flex gap-2">
           {property.is_featured && (
             <span className="bg-brand-gold text-white text-xs font-medium px-2.5 py-1 rounded-full">
@@ -51,30 +52,33 @@ export default function PropertyCard({ property }: PropertyCardProps) {
             </span>
           )}
           {property.is_new_project && (
-            <span className="bg-brand-navy text-white text-xs font-medium px-2.5 py-1 rounded-full">
+            <span className="bg-brand-dark text-white text-xs font-medium px-2.5 py-1 rounded-full">
               {t("new")}
             </span>
           )}
         </div>
 
-        {/* Listing type */}
+        {/* Listing type badge — top right */}
         <div className="absolute top-3 right-3">
-          <span className="bg-white/90 backdrop-blur-sm text-brand-navy text-xs font-medium px-2.5 py-1 rounded-full">
+          <span className="bg-white/90 backdrop-blur-sm text-brand-dark text-xs font-medium px-2.5 py-1 rounded-full">
             {property.listing_type === "sale" ? "For Sale" : "For Rent"}
           </span>
         </div>
       </div>
 
-      {/* Content */}
+      {/* Card content */}
       <div className="p-5">
-        <div className="text-2xl font-bold text-brand-navy mb-1">
+        {/* Price */}
+        <div className="text-2xl font-bold text-brand-dark mb-1">
           {displayPrice}
         </div>
 
-        <h3 className="font-medium text-gray-700 mb-2 group-hover:text-brand-gold transition-colors line-clamp-1">
+        {/* Title */}
+        <h3 className="font-medium text-gray-700 group-hover:text-brand-accent transition-colors duration-300 line-clamp-1 mb-2">
           {title}
         </h3>
 
+        {/* Location */}
         {address && (
           <div className="flex items-center gap-1 text-sm text-brand-slate mb-3">
             <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
@@ -82,8 +86,8 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           </div>
         )}
 
-        {/* Stats */}
-        <div className="flex items-center gap-4 text-sm text-brand-slate pt-3 border-t border-gray-50">
+        {/* Stats row */}
+        <div className="flex items-center gap-4 text-sm text-brand-slate pt-3 border-t border-gray-100">
           {property.bedrooms != null && (
             <span className="flex items-center gap-1">
               <Bed className="w-4 h-4" />
